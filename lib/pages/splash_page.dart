@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kosappv1/pages/home_page.dart';
 import 'package:kosappv1/theme.dart';
 
 class SplashPage extends StatelessWidget {
@@ -14,7 +15,7 @@ class SplashPage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Image.asset('assets/splash_image.png'),
-              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(
                 top: 50,
@@ -58,19 +59,25 @@ class SplashPage extends StatelessWidget {
                     width: 210,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: (){}, 
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: purpleColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(17),
-                        )
+                          backgroundColor: purpleColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(17),
+                          )),
+                      child: Text(
+                        'Explore Now',
+                        style: whiteTextStyle.copyWith(
+                          fontSize: 18,
+                        ),
                       ),
-                    
-                    child:  Text('Explore Now',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 18,
-                      ),
-                    ),
                     ),
                   ),
                 ],
